@@ -1,137 +1,74 @@
-# AI Researcher Agent - Debugging Guide
+# AI Researcher Agent
 
-## Common Issues and Solutions
+> **AI-powered autonomous research assistant that discovers, analyzes, and summarizes academic papers**
 
-### 1. No Papers Showing Up
+## Project Overview
 
-**Symptoms:** Research starts but no papers are found or displayed.
+The AI Researcher Agent is a sophisticated web application that automates the research process by discovering relevant academic papers, analyzing their content, and generating comprehensive literature reviews. Built with modern web technologies, it provides researchers, students, and professionals with an intelligent tool to accelerate their literature review and research discovery process.
 
-**Possible Causes:**
-- Missing or invalid API keys
-- Network connectivity issues
-- API rate limiting
-- CORS issues in development
+### Key Features
+- **Intelligent Paper Discovery**: Advanced search algorithms to find relevant academic papers
+- **AI-Powered Analysis**: Automatic extraction of key findings and methodologies
+- **Literature Review Generation**: AI-generated comprehensive literature reviews
+- **Interactive Q&A**: Ask follow-up questions about your research
+- **Modern User Interface**: Responsive design with intuitive navigation
 
-**Solutions:**
-1. **Check Environment Variables:**
-   - Create `.env.local` file in your project root
-   - Add your OpenAI API key: `OPENAI_API_KEY=your_key_here`
-   - Optionally add Semantic Scholar API key: `SEMANTIC_SCHOLAR_API_KEY=your_key_here`
+## Tech Stack
 
-2. **Verify API Keys:**
-   - Test your OpenAI API key at https://platform.openai.com/playground
-   - Ensure you have sufficient credits/quota
+### **Frontend**
+- **Next.js 15**: React framework with App Router
+- **React 19**: Latest React with modern features
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first CSS framework
+- **Radix UI**: Accessible component primitives
 
-3. **Check Network:**
-   - Ensure your development server can make external API calls
-   - Check if you're behind a corporate firewall
+### **Backend**
+- **API Routes**: Next.js API endpoints
+- **Mock Data System**: Demo data for testing
+- **Error Handling**: Comprehensive error management
+- **Fallback Mechanisms**: Graceful degradation
+## Installation & Setup
 
-### 2. API Route Issues
+### Prerequisites
+- **Node.js** 18.0 or higher
+- **npm** or **pnpm** package manager
+- Modern web browser
 
-**Symptoms:** 404 errors or API routes not found.
+### Quick Start
 
-**Solutions:**
-1. **Verify File Structure:**
-   \`\`\`
-   app/
-   ├── api/
-   │   ├── search-papers/
-   │   │   └── route.ts
-   │   ├── analyze-papers/
-   │   │   └── route.ts
-   │   └── chat/
-   │       └── route.ts
-   └── page.tsx
-   \`\`\`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/ai-researcher-agent.git
+   cd ai-researcher-agent
+   ```
 
-2. **Check Next.js Version:**
-   - Ensure you're using Next.js 13+ with App Router
-   - API routes should be in `app/api/` not `pages/api/`
-
-### 3. CORS Issues
-
-**Symptoms:** Network errors in browser console.
-
-**Solutions:**
-1. **Development Server:**
-   - Restart your development server: `npm run dev`
-   - Clear browser cache and cookies
-
-2. **Production Deployment:**
-   - Ensure API routes are deployed correctly
-   - Check Vercel/deployment logs for errors
-
-### 4. OpenAI API Errors
-
-**Symptoms:** Analysis fails or returns generic responses.
-
-**Solutions:**
-1. **Check API Quota:**
-   - Visit https://platform.openai.com/usage
-   - Ensure you have remaining credits
-
-2. **Rate Limiting:**
-   - The app includes fallback logic for rate limits
-   - Wait a few minutes and try again
-
-### 5. Debugging Steps
-
-1. **Use the Debug Tab:**
-   - The updated app includes a debug tab
-   - Check for detailed error messages and API call logs
-
-2. **Browser Developer Tools:**
-   - Open Network tab to see API requests
-   - Check Console for JavaScript errors
-
-3. **Server Logs:**
-   - Check your terminal/console for server-side errors
-   - Look for API key validation messages
-
-## Testing the Fix
-
-1. **Create Environment File:**
-   \`\`\`bash
-   cp .env.local.example .env.local
-   # Edit .env.local with your actual API keys
-   \`\`\`
-
-2. **Install Dependencies:**
-   \`\`\`bash
+2. **Install dependencies**
+   ```bash
    npm install
-   \`\`\`
+   # or
+   pnpm install
+   ```
 
-3. **Start Development Server:**
-   \`\`\`bash
+3. **Start the development server**
+   ```bash
    npm run dev
-   \`\`\`
+   # or
+   pnpm dev
+   ```
 
-4. **Test Research:**
-   - Go to http://localhost:3000
-   - Enter a simple research topic like "machine learning"
-   - Check the Debug tab for detailed information
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Getting API Keys
+### Available Scripts
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-### OpenAI API Key (Required)
-1. Go to https://platform.openai.com/api-keys
-2. Create a new API key
-3. Add billing information if needed
-4. Copy the key to your `.env.local` file
+---
 
-### Semantic Scholar API Key (Optional)
-1. Go to https://www.semanticscholar.org/product/api
-2. Sign up for an API key
-3. This improves rate limits but the app works without it
+**Made with ❤️ by [Your Name]**
 
-## Still Having Issues?
-
-If you're still experiencing problems:
-
-1. Check the Debug tab in the application
-2. Look at browser developer tools (F12)
-3. Check your terminal for server errors
-4. Verify your API keys are valid and have quota
-5. Try a simple research topic first
-
-The app includes comprehensive error handling and fallback mechanisms, so it should work even with limited API access.
+*Empowering researchers with AI-driven insights*
