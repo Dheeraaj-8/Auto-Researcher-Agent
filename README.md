@@ -67,8 +67,3 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
----
-
-**Made with ❤️ by [Your Name]**
-
-*Empowering researchers with AI-driven insights*
