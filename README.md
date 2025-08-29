@@ -1,4 +1,4 @@
-# AI Researcher Agent
+# Auto Researcher Agent
 
 > **AI-powered autonomous research assistant that discovers, analyzes, and summarizes academic papers**
 
